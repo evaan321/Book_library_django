@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.contrib.auth.views import LoginView,LogoutView
+from django.contrib.auth import logout
+from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
@@ -202,5 +203,6 @@ def return_book(request, borrowed_book_id):
 
     return redirect('profile') 
 
-class LogoutUserView(LogoutView):
-    next_page = reverse_lazy('home')
+def logoutNew(request):
+    logout(request)
+    return redirect('home')

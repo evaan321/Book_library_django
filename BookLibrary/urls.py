@@ -34,7 +34,7 @@ urlpatterns = [
     path('profile/', profile, name='profile'),
     path('review/<int:book_id>/', review_book, name='review-book'),
     path('return/<int:borrowed_book_id>/', return_book, name='return-book'),
-     path('logout/', LogoutUserView.as_view(), name='logout'),
+     path('logout/', logoutNew, name='logout'),
 
 ]
 urlpatterns += static(settings.MEDIA_URL ,document_root = settings.MEDIA_ROOT)
