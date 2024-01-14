@@ -12,8 +12,9 @@
         <p><strong>Price:</strong> {{ book.bPrice }} Taka</p>
         <p><strong>Category:</strong> {{ book.category }}</p>
 
-       
+        <a class="btn btn-success" href="{% url 'borrow-book' book.id %}">Borrow</a>
         <div class="mt-4">
+
           <h3>User Reviews:</h3>
           {% if reviews %}
             <div class="list-group">
