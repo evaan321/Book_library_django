@@ -203,5 +203,4 @@ def return_book(request, borrowed_book_id):
     return redirect('profile') 
 
 class LogoutUserView(LogoutView):
-    def get_success_url(self):
-        return reverse_lazy('register')
+    next_page = reverse_lazy('home')
