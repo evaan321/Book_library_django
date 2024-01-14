@@ -43,7 +43,7 @@ class CustomRegisterView(CreateView):
         response = super().form_valid(form)
         login(self.request, self.object)
         subject = 'Welcome to Our Library'
-        message = f'Thank you {form.cleaned_data['username']} for registering on Our Library. We hope you enjoy your experience!'
+        message = f"Thank you {form.cleaned_data['username']} for registering on Our Library. We hope you enjoy your experience!"
         from_email = 'evaanrahman2@gmail.com'  
         to_email = [form.cleaned_data['email']]  
 
@@ -121,7 +121,7 @@ def deposit_money(request):
             user_model.balance += amount
             user_model.save()
             subject = 'Welcome to Our Library'
-            message = f'Thank you for Depositing {form.cleaned_data['amount']} Taka on Our Library . We hope you Keep Depositing more money !'
+            message = f"Thank you for Depositing {form.cleaned_data['amount']} Taka on Our Library . We hope you Keep Depositing more money !"
             from_email = 'evaanrahman2@gmail.com'  
             to_email = [request.user.email]  
 
